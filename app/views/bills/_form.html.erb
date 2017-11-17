@@ -1,0 +1,21 @@
+<%= form_for @bill do |f| %>
+  <% if @bill.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+      <ul>
+      <% @bill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.fields_for :orders do |form| %>
+    <%= render 'order_fields', f: form %>
+  <% end %>
+  <%= link_to_add_fields "Add Order", f, :orders %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= button_to "Back",root_path,method: "get" %>

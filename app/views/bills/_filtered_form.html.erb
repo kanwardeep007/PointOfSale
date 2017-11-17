@@ -1,0 +1,9 @@
+<fieldset>
+  <%= label_tag id,"Item" %>
+  <%= select_tag name,options_for_select(@items),options:{id: id} %>
+  <%= label_tag quantity_1,"quantity" %>
+  <%= text_field_tag "asd",nil, {id:quantity_1 , name:quantity_2} %>
+  <%= hidden_field_tag :_destroy,nil,{id: destroy_2,name: destroy_1,value: false} %>
+  <br />
+  <%= link_to "Remove Order","#",class: "remove_order" %>
+</fieldset>

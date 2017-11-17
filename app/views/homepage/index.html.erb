@@ -1,0 +1,8 @@
+<h1>Welcome to BLB Restaurant</h1>
+<%= button_to "Add item",new_item_path,method: "get"%>
+<%= button_to "New Bill",new_bill_path,method: "get"%>
+
+<%= form_tag bills_path, method: "get" do %>
+  <%= text_field_tag "id",params[:id] %>
+  <%= submit_tag "Search bill number", name: nil %>
+<%end%>

@@ -1,0 +1,8 @@
+<%= form_tag search_path, method: "get",remote: true do %>
+  <%= text_field_tag "search",params[:search] %>
+  <%= hidden_field_tag "hidden_value_id","some_id" %>
+  <%= hidden_field_tag "hidden_value_name","some_name" %>
+  <%= hidden_field_tag "hidden_value_quantity_2","some_id" %>
+  <%= hidden_field_tag "hidden_value_destroy_1","some_id" %>
+  <%= submit_tag "Search", name: nil %>
+<%end%>

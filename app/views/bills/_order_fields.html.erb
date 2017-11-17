@@ -1,0 +1,10 @@
+<div class = "line_order">
+  <fieldset>
+    <%= f.label :item_id %>
+    <%= f.select("item_id", @items) %>
+    <%= f.label :quantity, "quantity" %>
+    <%= f.number_field :quantity %><br />
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "Remove Order","#",class: "remove_order" %>
+  </fieldset>
+</div>

@@ -1,0 +1,25 @@
+<h1>Create new item </h1>
+
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <% @item.errors.full_messages.each do |e|%>
+      <li>
+        <%= e %>
+      </li>
+    <% end %>
+  <% end %>
+
+  <%= f.label :name  %>
+  <%= f.text_field :name,placeholder: "Apple juice" %>
+  <br>
+  <%= f.label :Price  %>
+  <%= f.text_field :price,placeholder: "65.50" %>
+  <br>
+  <%= f.label :Tags  %>
+  <%= f.text_field :all_tags,placeholder: "veg,lunch" %>
+  <br>
+  <%= f.submit "Create Item"%>
+  <br>
+<%end%>
+
+<%= button_to "Back",root_path,method: "get" %>

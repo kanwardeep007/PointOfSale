@@ -1,0 +1,2 @@
+$(".line_order").last().empty();
+$(".line_order").last().html("<%= escape_javascript(render :partial => 'filtered_form',locals: {items: @items,id: @id,name: @name,quantity_1: @quantity_1,quantity_2: @quantity_2,destroy_1: @destroy_1,destroy_2: @destroy_2})%>");

@@ -1,0 +1,53 @@
+<h1>Showing</h1>
+<h4>Bill Number <%= @bill.id %> </h4>
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Quantity
+    </th>
+    <th>
+      Cost(exl. tax)
+    </th>
+    <th>
+      Final Price
+    </th>
+  </tr>
+  <% @bill.orders.each do |order|%>
+    <tr>
+      <td>
+        <%= order.item_name %>
+      </td>
+      <td>
+        <%= order.quantity %>
+      </td>
+      <td>
+        <%= order.sale_price %>
+      </td>
+      <td>
+        <%= order.final_price %>
+      </td>
+    </tr>
+  <%end%>
+  <tr>
+    <td>
+      Total Price (before taxes)
+    </td>
+    <td>
+      <%= @bill.orders.sum(&:sale_price)%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Total Price (after taxes)
+    </td>
+    <td>
+      <%= @bill.orders.sum(&:final_price)%>
+    </td>
+  </tr>
+</table>
+
+<%= button_to "Home page",root_path,method: "get" %>
+<%= button_to "New Bill",new_bill_path,method: "get"%>
