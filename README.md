@@ -1,26 +1,29 @@
-# README
+README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things to do to setup the project are as follows
 
-Things you may want to cover:
+Type the following commands on terminal
+-> bundle install
+-> rake db:create
+-> rake db:migrate
+-> rake db:seed
 
-* Ruby version
 
-* System dependencies
+Launch the server with
+-> rails s
 
-* Configuration
 
-* Database creation
+Structure is as follow 
 
-* Database initialization
+1. Bill has various orders
+2. Order is like a single line in a Bill receipt
+3. Order has a particular item, quantity , sale_price  and final_price (sale_price + taxes)
 
-* How to run the test suite
+For searching items by hashag first add an order to Bill then type hashtag you want to search in search bar and hit search. The drop down  will change according to hashtag (for last order only).
 
-* Services (job queues, cache servers, search engines, etc.)
+format for hashtag search (example)
+1.dinner,bread
+2.veg
 
-* Deployment instructions
 
-* ...
-
-hello
+Enjoy :)
